@@ -14,7 +14,10 @@ namespace value_sample_api.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2", "Docker Container" };
+            return new string[] {
+                "value1",
+                "value2",
+                "Docker Container" };
         }
 
         // GET api/values/5
@@ -28,6 +31,7 @@ namespace value_sample_api.Controllers
         [HttpPost]
         public void Post([FromBody] string value)
         {
+
         }
 
         // PUT api/values/5
