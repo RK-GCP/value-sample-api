@@ -17,14 +17,14 @@ namespace value_sample_api.Controllers
             return new string[] {
                 "value1",
                 "value2",
-                "Docker Container" };
+                $"Docker Container{GetRandomId(int.MinValue, int.MaxValue)}" };
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return $"value {id}";
+            return $"value {GetRandomId(int.MinValue, int.MaxValue)}";
         }
 
         // POST api/values
@@ -44,6 +44,12 @@ namespace value_sample_api.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }
+
+        private string GetRandomId(int min, int max)
+        {
+            Random random = new Random();
+            return random.Next(min, max).ToString();
         }
     }
 }
