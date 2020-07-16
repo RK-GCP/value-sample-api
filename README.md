@@ -1,3 +1,3 @@
 # value-sample-api
 value-sample-api
-New version will include helm chart
+Next Version to Include helm chart
