@@ -1,0 +1,9 @@
+Congratulations ! You installed {{ .Chart.Name }} chart sucessfully.
+Release name is {{ .Release.Name }}
+
+You can access the Value Sample application at the following urls :
+
+http://localhost:30004/swagger/index.html
+curl -X GET "http://localhost:30004/api/EValues" -H "accept: text/plain"
+
+Have fun !

@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vsa-api
+  namespace: rk-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vsa-api
+  template:
+    metadata:
+      labels:
+        app: vsa-api
+    spec:
+      containers:
+      - image: value-smaple:1.1
+        imagePullPolicy: IfNotPresent
+        name: vsa-api
+        ports:
+        - name: vsa-api
+          containerPort: 80
+        env:
+        - name: MY_VAL1
+          valueFrom:
+            configMapKeyRef:
+              name: api-config
+              key: my-val-1
+
+
+              
+

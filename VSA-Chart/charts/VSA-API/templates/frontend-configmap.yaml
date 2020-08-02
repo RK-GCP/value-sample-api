@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-config
+  namespace: rk-demo
+data:
+  backend-uri: "http://localhost:18080/"
+  my-val-1: "This is a value from Config Map A New VAlue !!!!!!!"

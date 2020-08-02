@@ -1,0 +1,6 @@
+apiVersion: v2
+name: shoplist
+appVersion: "2.1"
+description: A Helm chart Value Sample API
+version: 1.0.1
+type: application
