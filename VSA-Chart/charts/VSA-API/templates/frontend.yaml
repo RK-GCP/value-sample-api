@@ -14,7 +14,7 @@ spec:
         app: vsa-api
     spec:
       containers:
-      - image: value-smaple:1.1
+      - image: korasoln/value-sample-api:master
         imagePullPolicy: IfNotPresent
         name: vsa-api
         ports:
@@ -26,6 +26,14 @@ spec:
             configMapKeyRef:
               name: api-config
               key: my-val-1
+        livenessProbe:
+          httpGet:
+            path: /api/Values
+            port: 80
+          initialDelaySeconds: 15
+          timeoutSeconds: 2 # Default is 1
+          periodSeconds: 59 # Default is 10
+          failureThreshold: 1 # Default is 3
 
 
               
